@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "list.h"
+#include "gpio.h"
 
 
 void bss_to_zero();
@@ -13,7 +14,6 @@ struct list_element b = {NULL,NULL, 1};
 struct list_element a = {NULL,NULL, 5};
 struct list_element c = {NULL,NULL, 2};
 struct list_element *head = &a;
-
 struct list_element* list = &a;
 
 void kernel_main(){
@@ -21,7 +21,12 @@ void kernel_main(){
 	list_add(list, &b);
 	list_add(list, &c);
 	list_remove(head, 1);
+	led_init;
 	while (1){
+	led_on();
+	delay();
+	led_off();
+	delay();
 	}
 }
 
