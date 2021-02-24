@@ -9,17 +9,14 @@ void led_init(){
 	return;
 }
 
-//pin to 1
 void led_on(){
 	*gpset1 = (1 << 10);
 }
 
-//pin to 0
 void led_off(){
 	*gpclr1 = (1 << 10);
 }
 
-//delays 1 second
 void delay(){
 	unsigned int x = 0;
 	for(x; x <100000; x++){

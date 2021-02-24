@@ -21,7 +21,7 @@ void kernel_main(){
 	list_add(list, &b);
 	list_add(list, &c);
 	list_remove(head, 1);
-	led_init;
+	led_init();
 	while (1){
 	led_on();
 	delay();
