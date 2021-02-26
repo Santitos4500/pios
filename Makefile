@@ -17,6 +17,11 @@ OBJS = \
 	kernel_main.o \
 	list.o \
 	gpio.o \
+	serial.o \
+	rprintf.o \
+
+
+
 
 
 OBJ = $(patsubst %,$(ODIR)/%,$(OBJS))
