@@ -53,7 +53,7 @@ debug:
 	TERM=xterm -x gdb_init_prot_mode.txt
 
 run:
-	qemu -machine raspi3 -kernel kernel8.img -hda rootfs.img -serial null -serial stdio -monitor none -nographic -k en-us
+	qemu-system-aarch64 -machine raspi3 -kernel kernel8.img -hda rootfs.img -serial null -serial stdio -monitor none -nographic -k en-us
 
 disassemble:
 	$(OBJDUMP) -D kernel8.elf
