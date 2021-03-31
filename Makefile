@@ -16,7 +16,7 @@ OBJS = \
 	boot.o \
 	kernel_main.o \
 	list.o \
-	gpio.o \
+	blinky.o \
 	serial.o \
 	rprintf.o \
 	page.o \
