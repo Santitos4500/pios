@@ -4,6 +4,9 @@
 #include "page.h"
 #include "serial.h"
 #include "rprintf.h"
+#include "gpio.h"
+#include "fat.h"
+#include "sd.h"
 
 extern int __bss_start;
 extern int __bss_end;
@@ -29,7 +32,7 @@ void kernel_main(){
 	*mu_io_reg = 'I';
 	*mu_io_reg = 'S';
 	esp_printf(putc, "The memory location is %x", kernel_main);
-	*/
+	
 	init_pfa_list();
 	struct ppage* test = free_list->next;
 	test = test->next;
@@ -40,7 +43,12 @@ void kernel_main(){
 	esp_printf(putc, "Allocated Address:  %x \n", test->physical_addr);
 	free_physical_pages(test);
 	esp_printf((void *)putc, "Address after Freeing: %x\n", test->physical_addr);
-
+	*/
+	struct file fat_test;
+	sd_init();
+	fatInit();
+	fatOpen(&fat_test, "TEST");
+	fatRead(&fat_test,"TEST", 32);
 	while (1){
 		/*led_on(); commented out for serial homework
 		delay();

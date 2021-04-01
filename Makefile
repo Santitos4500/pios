@@ -16,10 +16,13 @@ OBJS = \
 	boot.o \
 	kernel_main.o \
 	list.o \
-	blinky.o \
 	serial.o \
 	rprintf.o \
 	page.o \
+	mmusetup.o \
+	fat.o \
+	sd.o \
+	clibfuncs.o \
 
 
 
